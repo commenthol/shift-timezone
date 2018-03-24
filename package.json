@@ -28,10 +28,14 @@
   },
   "scripts": {
     "build": "babel -d lib src",
+    "clean": "rimraf lib coverage .nyc_output",
+    "clean:all": "npm run clean && rimraf *.tgz lib node_modules",
     "coverage": "nyc -r html -r text npm test",
     "lint": "eslint '**/*.js'",
-    "prepare": "rm -rf lib && npm run lint && npm run build && npm test",
+    "prepare": "npm run clean && npm run lint && npm run build && npm test",
     "test": "mocha",
+    "test:honolulu": "TZ=Pacific/Honolulu npm run test",
+    "test:tokyo": "TZ=Asia/Tokyo npm run test",
     "zuul": "zuul --no-coverage --local 3000 -- test/*.js"
   },
   "babel": {
@@ -39,17 +43,10 @@
       "env"
     ]
   },
-  "eslintConfig": {
-    "extends": "standard",
-    "plugins": [
-      "standard"
-    ]
-  },
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "babelify": "^8.0.0",

@@ -1,6 +1,8 @@
 module.exports = {
   extends: 'standard',
-  parser: 'babel-eslint',
+  plugins: [
+    'standard'
+  ],
   env: {
     es6: true,
     mocha: true
