@@ -10,10 +10,22 @@
     "timezone",
     "tz"
   ],
+  "homepage": "https://github.com/commenthol/shift-timezone#readme",
+  "bugs": {
+    "url": "https://github.com/commenthol/shift-timezone/issues"
+  },
   "license": "Unlicense",
   "author": "commenthol <commenthol@gmail.com>",
   "main": "lib",
   "module": "src",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/commenthol/shift-timezone.git"
+  },
   "scripts": {
     "build": "babel -d lib src",
     "coverage": "nyc -r html -r text npm test",
@@ -33,6 +45,7 @@
       "standard"
     ]
   },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
